@@ -1,10 +1,12 @@
 import React from 'react';
-import { Lock, Unlock } from 'lucide-react';
+import { Lock, Unlock, ExternalLink } from 'lucide-react';
 
 interface HeaderProps {
   isDevMode?: boolean;
   onToggleDevMode?: () => void;
 }
+
+const PORTAL_DEV_URL = "https://aistudio.google.com/apps/drive/1NSB5Ctf4Hlf1csirEZHQNUitFSTJlSQ2?showAssistant=true&showPreview=true&resourceKey=";
 
 const Header: React.FC<HeaderProps> = ({ isDevMode = false, onToggleDevMode }) => {
   return (
@@ -18,9 +20,22 @@ const Header: React.FC<HeaderProps> = ({ isDevMode = false, onToggleDevMode }) =
         <h1 className="m-0 text-[1.05rem] tracking-[0.04em] font-bold uppercase leading-tight">
           OSPITAL NG MAKATI
         </h1>
-        <span className="text-[0.8rem] opacity-90">
-          Web App Portal
-        </span>
+        {isDevMode ? (
+          <a 
+            href={PORTAL_DEV_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[0.8rem] opacity-90 hover:opacity-100 hover:text-yellow-300 transition-colors flex items-center gap-1 w-fit"
+            title="Open Portal in AI Studio"
+          >
+            <span>Web App Portal</span>
+            <ExternalLink size={12} />
+          </a>
+        ) : (
+          <span className="text-[0.8rem] opacity-90">
+            Web App Portal
+          </span>
+        )}
       </div>
 
       <button 

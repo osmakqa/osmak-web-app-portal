@@ -14,6 +14,7 @@ const App: React.FC = () => {
 
   const qmsApps = APP_DATA.filter(app => app.category === CategoryType.QMS);
   const qaApps = APP_DATA.filter(app => app.category === CategoryType.QA);
+  const otherApps = APP_DATA.filter(app => app.category === CategoryType.OTHERS);
 
   const handleToggleDevMode = () => {
     if (isDevMode) {
@@ -129,6 +130,25 @@ const App: React.FC = () => {
               ))}
             </div>
           </section>
+
+          {/* Other Apps Section */}
+          {otherApps.length > 0 && (
+            <section>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-10 w-1 bg-blue-600 rounded-full"></div>
+                <h3 className="text-2xl font-bold text-gray-800">
+                  Other Apps
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {otherApps.map(app => (
+                  <motion.div key={app.id} variants={itemVariants}>
+                    <AppCard app={app} isDevMode={isDevMode} />
+                  </motion.div>
+                ))}
+              </div>
+            </section>
+          )}
         </motion.div>
       </main>
 

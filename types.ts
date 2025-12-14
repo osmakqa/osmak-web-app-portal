@@ -2,7 +2,8 @@ import { LucideIcon } from 'lucide-react';
 
 export enum CategoryType {
   QMS = 'Quality Management System',
-  QA = 'Quality Assurance Apps'
+  QA = 'Quality Assurance Apps',
+  OTHERS = 'Other Apps'
 }
 
 export interface AppLink {

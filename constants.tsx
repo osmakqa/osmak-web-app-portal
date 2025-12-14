@@ -4,7 +4,8 @@ import {
   LayoutDashboard, 
   GraduationCap, 
   Pill, 
-  FileText 
+  FileText,
+  Heart
 } from 'lucide-react';
 import { AppLink, CategoryType } from './types';
 
@@ -70,5 +71,16 @@ export const APP_DATA: AppLink[] = [
     icon: FileText,
     category: CategoryType.QA,
     color: 'text-cyan-600'
+  },
+  // Other Apps
+  {
+    id: 'other-health',
+    title: 'Employee Health & Wellness',
+    description: 'Track and monitor employee health status and wellness initiatives.',
+    url: 'https://osmakhealthtracker.vercel.app',
+    devUrl: 'https://aistudio.google.com/apps/drive/1AkKdhscmZYbJ-zBJ7ktd2IjcXpTjqmoR?showAssistant=true&resourceKey=&showPreview=true',
+    icon: Heart,
+    category: CategoryType.OTHERS,
+    color: 'text-pink-600'
   }
 ];
