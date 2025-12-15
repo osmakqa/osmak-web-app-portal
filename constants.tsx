@@ -64,7 +64,7 @@ export const APP_DATA: AppLink[] = [
   },
   {
     id: 'qa-ptb',
-    title: 'PTB Registry',
+    title: 'Tuberculosis Registry',
     description: 'Pulmonary Tuberculosis patient registry and tracking system.',
     url: 'https://osmakptbregistry.vercel.app/',
     devUrl: 'https://aistudio.google.com/apps/drive/1G2wZIhvoAlFkxxeOxOEzvGoPr2o_V8Nh?showAssistant=true&resourceKey=&showCode=true',
